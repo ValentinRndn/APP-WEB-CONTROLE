@@ -17,3 +17,11 @@
 .button-design-red {
    @apply font-bold p-4 mx-2 text-white bg-red-600 rounded-md text-xl;
 }
+
+.input-design {
+    @apply w-full border-2 border-solid bg-gray-100  p-2 rounded-md mb-2
+}
+
+.button-design-dark {
+    @apply button-animation-scale p-2 w-full text-white bg-gray-500 rounded-md text-xl font-bold;
+}

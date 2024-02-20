@@ -1,17 +1,17 @@
-  
+  <div class="calculette mb-10">
   <div class="buttons-top flex m-4 gap-2 mx-2 mr-2 ">
-    <button id="saisie_button" class="button-animation-scale p-2 w-full text-white bg-gray-500 rounded-md text-xl font-bold">Saisie</button>
-    <button id="inventaire_button" class="button-animation-scale p-2 w-full text-white bg-gray-500 rounded-md text-xl font-bold">Inventaire</button>
+    <button id="saisie_button" class="button-animation-scale button-design-dark">Saisie</button>
+    <button id="inventaire_button" class="button-animation-scale button-design-dark">Inventaire</button>
   </div>
 
   <div class="input-container border-solid border-gray-200 border-2 m-2 mb-4 rounded-md">
   <div class="input-infos m-2 gap-2 mx-2 mr-2 rounded-md">
-    <input id="materials_input" class="w-full border-2 border-solid bg-gray-100  p-2 rounded-md mb-2">
-    <input id="calc_input" class="w-full border-2 border-solid bg-gray-100 p-2 rounded-md">
+    <input type="text" [(ngModel)]="articleString">
+    <input id="calc_input" class="input-design">
   </div>
 
     <div class="last_input flex m-2 gap-2 mx-2 mr-2 rounded-md">
-      <input id="results_input" class="w-full border-2 border-solid bg-gray-100  p-2 rounded-md">
+      <input id="results_input" class="input-design">
       <button id="u" class="button-animation-scale grid-cols-1 p-2 text-white bg-red-600 px-4 rounded-md text-xl font-bold">U</button>
     </div>  
   </div>
@@ -43,5 +43,30 @@
     <button id="arrow -button" class="button-animation-scale button-design-red">-></button>
 
   </div>
+</div>
+
+<hr>
+
+<div class="page-list">
+  <div class="buttons-top flex m-4 gap-2 mx-2 mr-2 ">
+    <button id="saisie_button" class="button-animation-scale p-2 w-full text-white bg-gray-500 rounded-md text-xl font-bold">Saisie</button>
+    <button id="inventaire_button" class="button-animation-scale p-2 w-full text-white bg-gray-500 rounded-md text-xl font-bold">Inventaire</button>
+  </div>
+  <div class="input-container">
+    <input id="materials_input" class="input-design ">
+    <input id="materials_input" class="input-design ">
+    <input id="materials_input" class="input-design ">
+    <input id="materials_input" class="input-design ">
+    <input id="materials_input" class="input-design ">
+    <input id="materials_input" class="input-design ">
+    <input id="materials_input" class="input-design ">
+  </div>
+  <div class="button-container-bottom flex gap-2 m-2">
+    <button id="saisie_button" class="button-design-dark">Importer un CSV</button>
+    <button id="inventaire_button" class="button-design-dark">Imprimer</button>
+    <button id="inventaire_button" class="button-design-dark">Enregistrer un CSV</button>
+ 
+  </div>
 
 
+</div>
