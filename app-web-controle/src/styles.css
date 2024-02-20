@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-animation-scale {
+    @apply transition-transform duration-300 ease-in-out;
+}
+
+.button-animation-scale:hover {
+    @apply transform scale-105;
+}
+
+.button-design-grey {
+    @apply font-bold p-4 mx-2 bg-gray-100 rounded-md text-xl;
+}
+
+.button-design-red {
+   @apply font-bold p-4 mx-2 text-white bg-red-600 rounded-md text-xl;
+}
