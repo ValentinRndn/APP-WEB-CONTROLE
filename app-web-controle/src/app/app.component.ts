@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
+import { Item } from '../interfaces/items.interfaces';
+
 
 @Component({
   selector: 'app-root',
@@ -14,12 +16,12 @@ import { ngxCsv } from 'ngx-csv/ngx-csv';
 export class AppComponent {
   title = 'app-web-controle';
 
-  articleString: any = '';
+  articleString: string = '';
   articleValue = '';
   totalValue = '';
   unite = '';
   value: string = '';
-  tab: any[] = [];
+  tab: Item[] = [];
   csvContent = 'data:text/csv;charset=utf-8,';
 
 
@@ -55,7 +57,8 @@ export class AppComponent {
   deleteFromInventory(index: number) {
     this.tab.splice(index, 1);
     localStorage.setItem('inventaire', JSON.stringify(this.tab));
-  }
+}
+
 
   ngOnInit() {
     const storedInventory = localStorage.getItem("inventaire");
@@ -84,5 +87,23 @@ export class AppComponent {
     new ngxCsv(this.tab, 'inventaire', options);
   }
 
+  print() {
+            // Création de la table HTML
+            var table = '<table border="1">';
+            table += '<thead><tr><th>ID</th><th>Nom</th><th>Quantités</th><th>Unité</th></tr></thead>';
+            table += '<tbody>';
+            for(let i = 0; i < this.tab.length; i++) {
+                table += '<tr>';
+                table += '<td>' + this.tab[i].nom + '</td>';
+                table += '<td>' + this.tab[i].quantite + '</td>';
+                table += '<td>' + this.tab[i].unite + '</td>';
+                table += '</tr>';
+            };
+            table += '</tbody>';
+            table += '</table>';
 
+            document.body.innerHTML = table;
+
+            window.print();
+        }
 }

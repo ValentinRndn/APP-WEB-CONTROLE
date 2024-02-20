@@ -1,19 +1,19 @@
   <div class="page scroll-smooth">
   <div class="calculette mb-10 " id="calc" >
-  <div class="flex sticky top-2 m-2 gap-2">
+  <div class="flex sticky top-2 m-2 gap-6">
     <button class="button-animation-scale button-design-dark"><a href="#calc">Saisie</a></button>
     <button class="button-animation-scale button-design-dark"><a href="#liste" >Inventaire</a></button>
   </div>
 
   <div class="input-container border-solid border-gray-200 border-2 m-2 mb-4 rounded-md">
-  <div class="input-infos m-2 gap-2 mx-2 mr-2 rounded-md">
+  <div class="input-infos m-2 gap-2 mx-2  rounded-md">
     <input type="text" [(ngModel)]="articleString" class="input-design">
     <input type="text" [(ngModel)]="articleValue" class="input-design">
   </div>
 
-    <div class="last_input flex m-2 gap-2 mx-2 mr-2 rounded-md">
+    <div class="last_input flex m-2 gap-2 rounded-md">
       <input type="text" [(ngModel)]="totalValue" class="input-design">
-      <select id="currency" [(ngModel)]="unite" class="button-animation-scale text-white bg-red-600 px-4 rounded-md text-xl font-bold m-2">
+      <select id="currency" [(ngModel)]="unite" class="button-animation-scale text-white bg-red-600 p-2 rounded-md text-xl font-bold h-full">
         <option value="m²">m²</option>
         <option value="ml">ml</option>
         <option value="m³">m³</option>  
@@ -56,17 +56,20 @@
 <hr>
 
 <div id="liste" class="page-list">
-  <div *ngFor="let item of tab">
-    <div class="input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
-      <div>{{ item.nom }}</div>
-      <div>{{ item.quantite }} {{ item.unite }}</div>
-      <div (click)="deleteFromInventory(item)" class="button-animation-scale text-gray-500 cursor-pointer text-xl">x</div>
+  <div id="liste" class="page-list">
+    <div *ngFor="let item of tab; let i = index">
+      <div class="input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
+        <div>{{ item.nom }}</div>
+        <div>{{ item.quantite }} {{ item.unite }}</div>
+        <div (click)="deleteFromInventory(i)" class="button-animation-scale text-gray-500 cursor-pointer text-xl">x</div>
+      </div>
     </div>
   </div>
   
-  <div class="button-container-bottom flex gap-2 m-2">
+  
+  <div class="button-container-bottom flex gap-6 m-2">
     <button (click)="exportCSV()" id="import_csv" class="button-design-dark">Importer un CSV</button>
-    <button id="inventaire_button" class="button-design-dark">Imprimer</button>
+    <button (click)="print()"id="inventaire_button" class="button-design-dark">Imprimer</button>
     <button id="inventaire_button" class="button-design-dark">Enregistrer un CSV</button>
  
   </div>
