@@ -10,16 +10,34 @@
     @apply transform scale-105;
 }
 
+.hover-red {
+    @apply hover:bg-red-700 transition-colors duration-300 ease-in-out;
+}
+
+.hover-gray {
+    @apply hover:bg-gray-300 transition-colors duration-300 ease-in-out;
+
+}
+
 .button-design-grey {
     @apply font-bold p-4 mx-2 bg-gray-100 rounded-md text-xl;
 }
 
+.hover-grey-dark {
+    @apply hover:bg-gray-600 transition-colors duration-300 ease-in-out;
+
+}
+
+.hover-delete {
+    @apply hover:text-red-600 transition-colors duration-300 ease-in-out;
+
+}
 .button-design-red {
    @apply font-bold p-4 mx-2 text-white bg-red-600 rounded-md text-xl;
 }
 
 .input-design {
-    @apply w-full border-2 border-solid border-gray-200 bg-gray-100  p-2 rounded-md mb-2 
+    @apply w-full border-2 border-solid border-gray-200 bg-gray-100  p-2 rounded-md mb-2 font-bold;
 }
 
 .button-design-dark {

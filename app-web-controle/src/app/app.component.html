@@ -1,19 +1,19 @@
   <div class="page scroll-smooth">
   <div class="calculette mb-10 " id="calc" >
   <div class="flex sticky top-2 m-2 gap-6">
-    <button class="button-animation-scale button-design-dark"><a href="#calc">Saisie</a></button>
-    <button class="button-animation-scale button-design-dark"><a href="#liste" >Inventaire</a></button>
+    <button class="button-animation-scale button-design-dark hover-grey-dark"><a href="#calc">Saisie</a></button>
+    <button class="button-animation-scale button-design-dark hover-grey-dark"><a href="#liste" >Inventaire</a></button>
   </div>
 
   <div class="input-container border-solid border-gray-200 border-2 m-2 mb-4 rounded-md">
   <div class="input-infos m-2 gap-2 mx-2  rounded-md">
-    <input type="text" [(ngModel)]="articleString" class="input-design">
-    <input type="text" [(ngModel)]="articleValue" class="input-design">
+    <input type="text" [(ngModel)]="articleString" class="input-design hover-gray">
+    <input type="text" [(ngModel)]="articleValue" class="input-design hover-gray">
   </div>
 
     <div class="last_input flex m-2 gap-2 rounded-md">
-      <input type="text" [(ngModel)]="totalValue" class="input-design">
-      <select id="currency" [(ngModel)]="unite" class="button-animation-scale text-white bg-red-600 p-2 rounded-md text-xl font-bold h-full">
+      <input type="text" [(ngModel)]="totalValue" class="input-design hover-gray">
+      <select id="currency" [(ngModel)]="unite" class="button-animation-scale text-white bg-red-600 p-2 rounded-md text-xl font-bold h-full hover-red ">
         <option value="m²">m²</option>
         <option value="ml">ml</option>
         <option value="m³">m³</option>  
@@ -25,30 +25,30 @@
   </div>
 
   <div class="buttons-calc grid grid-cols-4 gap-4">
-    <button id="par-left-button" (click)="addArticle('(')" class="button-animation-scale button-design-grey">(</button>
-    <button id="par-right-button" (click)="addArticle(')')" class="button-animation-scale button-design-grey ">)</button>
-    <button id="AC-button" (click)="clearInput()" class="button-animation-scale button-design-grey ">AC</button>
-    <button id="/-button"  (click)="addArticle('/')" class="button-animation-scale button-design-red">/</button>
+    <button id="par-left-button" (click)="addArticle('(')" class="button-animation-scale button-design-grey hover-gray">(</button>
+    <button id="par-right-button" (click)="addArticle(')')" class="button-animation-scale button-design-grey hover-gray ">)</button>
+    <button id="AC-button" (click)="clearInput()" class="button-animation-scale button-design-grey hover-gray ">AC</button>
+    <button id="/-button"  (click)="addArticle('/')" class="button-animation-scale button-design-red hover-red ">/</button>
 
-    <button id="7-button" (click)="addArticle('7')" class="button-animation-scale button-design-grey ">7</button>
-    <button id="8-button" (click)="addArticle('8')" class="button-animation-scale button-design-grey ">8</button>
-    <button id="9-button" (click)="addArticle('9')" class="button-animation-scale button-design-grey ">9</button>
-    <button id="X-button" (click)="addArticle('*')" class="button-animation-scale button-design-red">X</button>
+    <button id="7-button" (click)="addArticle('7')" class="button-animation-scale button-design-grey hover-gray">7</button>
+    <button id="8-button" (click)="addArticle('8')" class="button-animation-scale button-design-grey hover-gray">8</button>
+    <button id="9-button" (click)="addArticle('9')" class="button-animation-scale button-design-grey hover-gray">9</button>
+    <button id="X-button" (click)="addArticle('*')" class="button-animation-scale button-design-red hover-red ">X</button>
 
-    <button id="4-button" (click)="addArticle('4')" class="button-animation-scale button-design-grey ">4</button>
-    <button id="5-button" (click)="addArticle('5')" class="button-animation-scale button-design-grey ">5</button>
-    <button id="6-button" (click)="addArticle('6')" class="button-animation-scale button-design-grey ">6</button>
-    <button id="--button" (click)="addArticle('-')" class="button-animation-scale button-design-red">-</button>
+    <button id="4-button" (click)="addArticle('4')" class="button-animation-scale button-design-grey hover-gray">4</button>
+    <button id="5-button" (click)="addArticle('5')" class="button-animation-scale button-design-grey hover-gray">5</button>
+    <button id="6-button" (click)="addArticle('6')" class="button-animation-scale button-design-grey hover-gray">6</button>
+    <button id="--button" (click)="addArticle('-')" class="button-animation-scale button-design-red hover-red ">-</button>
 
-    <button id="1-button" (click)="addArticle('1')" class="button-animation-scale button-design-grey ">1</button>
-    <button id="2-button" (click)="addArticle('2')" class="button-animation-scale button-design-grey ">2</button>
-    <button id="3-button" (click)="addArticle('3')" class="button-animation-scale button-design-grey ">3</button>
-    <button id="+-button" (click)="addArticle('+')" class="button-animation-scale button-design-red">+</button>
+    <button id="1-button" (click)="addArticle('1')" class="button-animation-scale button-design-grey hover-gray">1</button>
+    <button id="2-button" (click)="addArticle('2')" class="button-animation-scale button-design-grey hover-gray">2</button>
+    <button id="3-button" (click)="addArticle('3')" class="button-animation-scale button-design-grey hover-gray">3</button>
+    <button id="+-button" (click)="addArticle('+')" class="button-animation-scale button-design-red hover-red ">+</button>
 
-    <button id="0-button" (click)="addArticle('0')" class="button-animation-scale button-design-grey ">0</button>
-    <button id=",-button" (click)="addArticle(',')" class="button-animation-scale button-design-grey ">,</button>
-    <button id="=-button" (click) ="Evaluate()" class="button-animation-scale button-design-red">=</button>
-    <button id="arrow -button" (click)="sendToInventory();clearInput()" class="button-animation-scale button-design-red">-></button>
+    <button id="0-button" (click)="addArticle('0')" class="button-animation-scale button-design-grey hover-gray">0</button>
+    <button id=",-button" (click)="addArticle(',')" class="button-animation-scale button-design-grey hover-gray">,</button>
+    <button id="=-button" (click) ="Evaluate()" class="button-animation-scale button-design-red hover-red ">=</button>
+    <button id="arrow -button" (click)="sendToInventory();clearInput()" class="button-animation-scale button-design-red hover-red ">-></button>
 
   </div>
 </div>
@@ -58,19 +58,19 @@
 <div id="liste" class="page-list">
   <div id="liste" class="page-list">
     <div *ngFor="let item of tab; let i = index">
-      <div (click)="editFromInventory(i)" class="input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
+      <div (click)="editFromInventory(i)" class="hover-gray input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
         <div>{{ item.nom }}</div>
         <div>{{ item.quantite }} {{ item.unite }}</div>
-        <div (click)="deleteFromInventory(i)" class="button-animation-scale text-gray-500 cursor-pointer text-xl">x</div>
+        <div (click)="deleteFromInventory(i)" class="button-animation-scale text-gray-500 cursor-pointer text-xl justify-center hover-delete">x</div>
       </div>
     </div>
   </div>
   
   
   <div class="button-container-bottom flex gap-6 m-2">
-    <button (click)="exportCSV()" id="import_csv" class="button-design-dark">Importer un CSV</button>
-    <button (click)="print()"id="inventaire_button" class="button-design-dark">Imprimer</button>
-    <button id="inventaire_button" class="button-design-dark">Enregistrer un CSV</button>
+    <button (click)="exportCSV()" id="import_csv" class="button-design-dark hover-grey-dark">Importer un CSV</button>
+    <button (click)="print()"id="inventaire_button" class="button-design-dark hover-grey-dark">Imprimer</button>
+    <button (click)="exportCSV()"id="inventaire_button" class="button-design-dark hover-grey-dark">Enregistrer un CSV</button>
  
   </div>
 
