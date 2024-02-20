@@ -110,6 +110,5 @@ export class AppComponent {
 
     document.body.innerHTML = table;
 
-    window.print();
   }
 }

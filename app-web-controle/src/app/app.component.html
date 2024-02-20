@@ -1,9 +1,9 @@
-  <div class="page scroll-smooth">
-  <div class="calculette mb-10 " id="calc" >
-  <div class="flex sticky top-2 m-2 gap-6">
-    <button class="button-animation-scale button-design-dark hover-grey-dark"><a href="#calc">Saisie</a></button>
-    <button class="button-animation-scale button-design-dark hover-grey-dark"><a href="#liste" >Inventaire</a></button>
-  </div>
+  <div class="page scroll-smooth md:flex justify-center items-center gap-10">
+    <div class="calculette mb-4 md:mt-20 items-center justify-center" id="calc">
+    <div class="flex sticky top-2 m-2 gap-6 md:hidden">
+      <button class="button-animation-scale button-design-dark hover-grey-dark"><a href="#calc">Saisie</a></button>
+      <button class="button-animation-scale button-design-dark hover-grey-dark"><a href="#liste" >Inventaire</a></button>
+    </div>
 
   <div class="input-container border-solid border-gray-200 border-2 m-2 mb-4 rounded-md">
   <div class="input-infos m-2 gap-2 mx-2  rounded-md">
@@ -53,9 +53,10 @@
   </div>
 </div>
 
-<hr>
+<hr class="bg-slate-600">
 
 <div id="liste" class="page-list">
+  <h1 class="justify-center text-center font-bold text-2xl items-center m-4">Inventaire</h1>
   <div id="liste" class="page-list">
     <div *ngFor="let item of tab; let i = index">
       <div (click)="editFromInventory(i)" class="hover-gray input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
