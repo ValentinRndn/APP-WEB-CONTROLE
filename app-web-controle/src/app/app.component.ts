@@ -47,6 +47,7 @@ export class AppComponent {
   sendToInventory() {
     let objet = {
       nom : this.articleString,
+      calcul: this.articleValue,
       unite: this.unite,
       quantite: this.totalValue,
     }
@@ -58,6 +59,16 @@ export class AppComponent {
     this.tab.splice(index, 1);
     localStorage.setItem('inventaire', JSON.stringify(this.tab));
 }
+
+editFromInventory(index: number) {
+  this.articleString = this.tab[index].nom;
+  this.articleValue = this.tab[index].calcul;
+  this.totalValue = this.tab[index].quantite;
+  this.unite = this.tab[index].unite;
+  this.tab.splice(index, 1);
+  localStorage.setItem('inventaire', JSON.stringify(this.tab));
+}
+
 
 
   ngOnInit() {
@@ -90,7 +101,7 @@ export class AppComponent {
   print() {
             // Création de la table HTML
             var table = '<table border="1">';
-            table += '<thead><tr><th>ID</th><th>Nom</th><th>Quantités</th><th>Unité</th></tr></thead>';
+            table += '<thead><tr><th>Nom</th><th>Quantités</th><th>Unité</th></tr></thead>';
             table += '<tbody>';
             for(let i = 0; i < this.tab.length; i++) {
                 table += '<tr>';

@@ -58,7 +58,7 @@
 <div id="liste" class="page-list">
   <div id="liste" class="page-list">
     <div *ngFor="let item of tab; let i = index">
-      <div class="input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
+      <div (click)="editFromInventory(i)" class="input-container flex justify-between bg-gray-100 gap-2 m-2 rounded-md font-bold p-4 border-2 border-solid border-gray-200">
         <div>{{ item.nom }}</div>
         <div>{{ item.quantite }} {{ item.unite }}</div>
         <div (click)="deleteFromInventory(i)" class="button-animation-scale text-gray-500 cursor-pointer text-xl">x</div>
