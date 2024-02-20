@@ -6,40 +6,40 @@
 
   <div class="input-container border-solid border-gray-200 border-2 m-2 mb-4 rounded-md">
   <div class="input-infos m-2 gap-2 mx-2 mr-2 rounded-md">
-    <input type="text" [(ngModel)]="articleString">
-    <input id="calc_input" class="input-design">
+    <input type="text" [(ngModel)]="articleString" class="input-design">
+    <input type="text" [(ngModel)]="articleValue" class="input-design">
   </div>
 
     <div class="last_input flex m-2 gap-2 mx-2 mr-2 rounded-md">
-      <input id="results_input" class="input-design">
+      <input type="text" [(ngModel)]="totalValue" class="input-design">
       <button id="u" class="button-animation-scale grid-cols-1 p-2 text-white bg-red-600 px-4 rounded-md text-xl font-bold">U</button>
     </div>  
   </div>
 
   <div class="buttons-calc grid grid-cols-4 gap-4">
-    <button id="par-left-button" class="button-animation-scale button-design-grey">(</button>
-    <button id="par-right-button" class="button-animation-scale button-design-grey ">)</button>
-    <button id="AC-button" class="button-animation-scale button-design-grey ">AC</button>
-    <button id="/-button" class="button-animation-scale button-design-red">/</button>
+    <button id="par-left-button" (click)="addArticle('(')" class="button-animation-scale button-design-grey">(</button>
+    <button id="par-right-button" (click)="addArticle(')')" class="button-animation-scale button-design-grey ">)</button>
+    <button id="AC-button" (click)="clearInput()" class="button-animation-scale button-design-grey ">AC</button>
+    <button id="/-button"  (click)="addArticle('/')" class="button-animation-scale button-design-red">/</button>
 
-    <button id="7-button" class="button-animation-scale button-design-grey ">7</button>
-    <button id="8-button" class="button-animation-scale button-design-grey ">8</button>
-    <button id="9-button" class="button-animation-scale button-design-grey ">9</button>
-    <button id="X-button" class="button-animation-scale button-design-red">X</button>
+    <button id="7-button" (click)="addArticle('7')" class="button-animation-scale button-design-grey ">7</button>
+    <button id="8-button" (click)="addArticle('8')" class="button-animation-scale button-design-grey ">8</button>
+    <button id="9-button" (click)="addArticle('9')" class="button-animation-scale button-design-grey ">9</button>
+    <button id="X-button" (click)="addArticle('*')" class="button-animation-scale button-design-red">X</button>
 
-    <button id="4-button" class="button-animation-scale button-design-grey ">4</button>
-    <button id="5-button" class="button-animation-scale button-design-grey ">5</button>
-    <button id="6-button" class="button-animation-scale button-design-grey ">6</button>
-    <button id="--button" class="button-animation-scale button-design-red">-</button>
+    <button id="4-button" (click)="addArticle('4')" class="button-animation-scale button-design-grey ">4</button>
+    <button id="5-button" (click)="addArticle('5')" class="button-animation-scale button-design-grey ">5</button>
+    <button id="6-button" (click)="addArticle('6')" class="button-animation-scale button-design-grey ">6</button>
+    <button id="--button" (click)="addArticle('-')" class="button-animation-scale button-design-red">-</button>
 
-    <button id="1-button" class="button-animation-scale button-design-grey ">1</button>
-    <button id="2-button" class="button-animation-scale button-design-grey ">2</button>
-    <button id="3-button" class="button-animation-scale button-design-grey ">3</button>
-    <button id="+-button" class="button-animation-scale button-design-red">+</button>
+    <button id="1-button" (click)="addArticle('1')" class="button-animation-scale button-design-grey ">1</button>
+    <button id="2-button" (click)="addArticle('2')" class="button-animation-scale button-design-grey ">2</button>
+    <button id="3-button" (click)="addArticle('3')" class="button-animation-scale button-design-grey ">3</button>
+    <button id="+-button" (click)="addArticle('+')" class="button-animation-scale button-design-red">+</button>
 
-    <button id="0-button" class="button-animation-scale button-design-grey ">0</button>
-    <button id=",-button" class="button-animation-scale button-design-grey ">,</button>
-    <button id="=-button" class="button-animation-scale button-design-red">=</button>
+    <button id="0-button" (click)="addArticle('0')" class="button-animation-scale button-design-grey ">0</button>
+    <button id=",-button" (click)="addArticle(',')" class="button-animation-scale button-design-grey ">,</button>
+    <button id="=-button" (click) ="Evaluate()" class="button-animation-scale button-design-red">=</button>
     <button id="arrow -button" class="button-animation-scale button-design-red">-></button>
 
   </div>

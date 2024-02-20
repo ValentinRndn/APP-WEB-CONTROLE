@@ -7,19 +7,31 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'app-web-controle';
 
-  articleString : string = '';
+  articleString: any = '';
+  articleValue = '';
+  totalValue = '';
+  value: string = '';
 
-  addArticle() {
-    this.articleString = 'test';
+  addArticle(value: string) {
+    this.articleValue += value;
   }
 
+  Evaluate() {
+    try {
+      this.totalValue = eval(this.articleValue);
+    } catch (error) {
+      console.error("Erreur :", error);
+    }
+  }
+
+  clearInput() {
+    this.articleString = '';
+    this.articleValue = '';
+    this.totalValue = '';
+  }
 }
-
-// addArticle() {
-
-// }
