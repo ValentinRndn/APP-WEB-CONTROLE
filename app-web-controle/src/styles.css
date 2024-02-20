@@ -19,7 +19,7 @@
 }
 
 .input-design {
-    @apply w-full border-2 border-solid bg-gray-100  p-2 rounded-md mb-2
+    @apply w-full border-2 border-solid border-gray-200 bg-gray-100  p-2 rounded-md mb-2 
 }
 
 .button-design-dark {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,8 @@ export class AppComponent {
   unite = '';
   value: string = '';
   tab: any[] = [];
+  csvContent = 'data:text/csv;charset=utf-8,';
+
 
   
   addArticle(value: string) {
@@ -64,6 +67,22 @@ export class AppComponent {
   }
 
   
+  exportCSV() {
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true, 
+      showTitle: true,
+      title: 'Inventaire des articles',
+      useBom: true,
+      noDownload: false,
+      headers: ["Nom", "Quantités", "Unité"],
+      eol: '\n'
+    };
+  
+    new ngxCsv(this.tab, 'inventaire', options);
+  }
 
 
 }
